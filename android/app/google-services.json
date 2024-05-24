@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466327071176",
+    "project_id": "final-cloud-app-e4d58",
+    "storage_bucket": "final-cloud-app-e4d58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466327071176:android:8fdb8e3d26b1ce3885f8fd",
+        "android_client_info": {
+          "package_name": "com.example.todolist_final"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaVWVs2erSOKfU4BeanfsKnzzU1IMsljg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
