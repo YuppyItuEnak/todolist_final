@@ -1,11 +1,19 @@
-allprojects {
+buildscript {
     repositories {
         google()
         mavenCentral()
     }
 
-    dependencies {
-         classpath 'com.google.gms:google-services:4.3.5'
+    dependencies{
+        classpath 'com.google.gms:google-services:4.3.5'
+         
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 
