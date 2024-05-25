@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:todolist_final/pages/home_page.dart';
-import 'package:todolist_final/pages/login_page.dart';
 
-class signUp extends StatefulWidget {
-  const signUp({super.key});
+class loginPage extends StatefulWidget {
+  const loginPage({super.key});
 
   @override
-  State<signUp> createState() => _signUpState();
+  State<loginPage> createState() => _loginPageState();
 }
 
-class _signUpState extends State<signUp> {
+class _loginPageState extends State<loginPage> {
   firebase_auth.FirebaseAuth firebaseAuth = firebase_auth.FirebaseAuth.instance;
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
@@ -28,7 +27,7 @@ class _signUpState extends State<signUp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Sign Up",
+                "Login",
                 style: TextStyle(
                     fontSize: 35,
                     color: Colors.white,
@@ -85,7 +84,7 @@ class _signUpState extends State<signUp> {
                   });
                   try {
                     firebase_auth.UserCredential userCredential =
-                        await firebaseAuth.createUserWithEmailAndPassword(
+                        await firebaseAuth.signInWithEmailAndPassword(
                             email: _emailController.text,
                             password: _passwordController.text);
                     print(userCredential.user?.email);
@@ -114,7 +113,7 @@ class _signUpState extends State<signUp> {
                       child: circular
                           ? CircularProgressIndicator()
                           : Text(
-                              "Sign Up",
+                              "Login",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 20),
                             ),
@@ -124,23 +123,16 @@ class _signUpState extends State<signUp> {
                 height: 15,
               ),
               Text(
-                "If you already have an account?",
+                "If you don't have an account?",
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
-              InkWell(
-                  onTap: () {
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (builder) => loginPage()),
-                        (route) => false);
-                  },
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
-                  ))
+              Text(
+                "Sign Up",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              )
             ],
           ),
         ),
